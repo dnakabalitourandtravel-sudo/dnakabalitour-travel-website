@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.NAKA Bali Tour & Travel</title>
+    <meta name="description" content="D.NAKA Bali Tour & Travel - Paket wisata Bali profesional, luxury, dan terpercaya. Booking mudah, invoice online, dan pelayanan terbaik.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        body {
+            background: linear-gradient(135deg, #54534e 60%, #805757 100%);
+            color: #2d364c;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        header {
+            position: relative;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #44525b;
+        }
+        .header-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.45;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 32px 16px 0 16px;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 56px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            margin-right: 18px;
+        }
+        .brand {
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #4e342e;
+            text-shadow: 0 2px 8px #fff;
+        }
+        .nav-bar a {
+            color: #4e342e;
+            background: #fbe9e7;
+            padding: 8px 18px;
+            border-radius: 8px;
+            margin: 0 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-bar a:hover {
+            background: #4d433f;
+            color: #fff;
+        }
+        .header-title {
+            text-align: center;
+            margin-top: 48px;
+        }
+        .header-title h1 {
+            color: #4e342e;
+            font-size: 2.7rem;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 12px #fff;
+        }
+        .header-title p {
+            color: #6d4c41;
+            font-size: 1.25rem;
+            background: rgba(255,255,255,0.7);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 12px;
+        }
+        .main-content {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(78,52,46,0.08);
+            margin: 32px auto;
+            max-width: 900px;
+            padding: 32px;
+            text-align: center;
+        }
+        .tour-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin: 32px 0;
+        }
+        .tour-item {
+            background: #fbe9e7;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(78,52,46,0.08);
+            padding: 24px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .tour-item:hover {
+            box-shadow: 0 8px 32px rgba(78,52,46,0.16);
+        }
+        .tour-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 16px auto;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #6d4c41;
+            color: #fff3e0;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.8;
+            z-index: 2;
+        }
+        .carousel-btn:hover {
+            background: #4e342e;
+        }
+        .carousel-btn:first-of-type {
+            left: 8px;
+        }
+        .carousel-btn:last-of-type {
+            right: 8px;
+        }
+        .booking-btn {
+            background: #6d4c41;
+            color: #fff3e0;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 32px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 12px;
+            transition: background 0.2s;
+        }
+        .booking-btn:hover {
+            background: #4e342e;
+        }
+        .booking-form, .invoice {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(78,52,46,0.08);
+            margin: 32px auto;
+            max-width: 500px;
+            padding: 32px;
+        }
+        .booking-form h2, .invoice h2 {
+            color: #4e342e;
+        }
+        .review-section {
+            background: #fbe9e7;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .review-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(78,52,46,0.08);
+            margin: 16px auto;
+            max-width: 400px;
+            padding: 24px;
+            color: #6d4c41;
+            font-style: italic;
+        }
+        .review-card span {
+            display: block;
+            margin-top: 12px;
+            color: #4e342e;
+            font-weight: bold;
+            font-style: normal;
+        }
+        footer {
+            background: #4e342e;
+            color: #fff3e0;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .tour-list {
+                grid-template-columns: 1fr;
+            }
+            .main-content, .booking-form, .invoice {
+                padding: 16px;
+            }
+        }
+    </style>
+    <script>
+const baliImages = [
+    'images/bali1.jpg',
+    'images/bali2.jpg',
+    'images/bali3.jpg'
+];
+let baliIndex = 0;
+
+function showBaliSlide(idx) {
+    const img = document.getElementById('bali-slide');
+    if (img) img.src = baliImages[idx];
+}
+
+function prevBaliSlide() {
+    baliIndex = (baliIndex - 1 + baliImages.length) % baliImages.length;
+    showBaliSlide(baliIndex);
+}
+
+function nextBaliSlide() {
+    baliIndex = (baliIndex + 1) % baliImages.length;
+    showBaliSlide(baliIndex);
+}
+    </script>
+    <script>
+const bali5Images = [
+    'images/bali5-1.jpg',
+    'images/bali5-2.jpg',
+    'images/bali5-3.jpg'
+];
+let bali5Index = 0;
+
+function showBali5Slide(idx) {
+    const img = document.getElementById('bali5-slide');
+    if (img) img.src = bali5Images[idx];
+}
+
+function prevBali5Slide() {
+    bali5Index = (bali5Index - 1 + bali5Images.length) % bali5Images.length;
+    showBali5Slide(bali5Index);
+}
+
+function nextBali5Slide() {
+    bali5Index = (bali5Index + 1) % bali5Images.length;
+    showBali5Slide(bali5Index);
+}
+    </script>
+    <script>
+const bali7Images = [
+    'images/bali7-1.jpg',
+    'images/bali7-2.jpg',
+    'images/bali7-3.jpg'
+];
+let bali7Index = 0;
+
+function showBali7Slide(idx) {
+    const img = document.getElementById('bali7-slide');
+    if (img) img.src = bali7Images[idx];
+}
+
+function prevBali7Slide() {
+    bali7Index = (bali7Index - 1 + bali7Images.length) % bali7Images.length;
+    showBali7Slide(bali7Index);
+}
+
+function nextBali7Slide() {
+    bali7Index = (bali7Index + 1) % bali7Images.length;
+    showBali7Slide(bali7Index);
+}
+    </script>
+</head>
+<body>
+    <header>
+        <img src="images/bali-view.jpg" alt="Bali View" class="header-bg">
+        <div class="header-content">
+            <div class="nav-bar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo">
+                    <div>
+                        <span class="brand">D.NAKA BALI TOUR & TRAVEL</span>
+                        <div style="font-size:1.1rem;color:#6d4c41;font-weight:500;letter-spacing:1px;margin-top:4px;">
+                            <em>Luxury & Professional Bali Experience</em>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#home">Home</a>
+                    <a href="#tours">Paket Tour</a>
+                    <a href="#booking">Booking</a>
+                    <a href="#review">Review</a>
+                </div>
+            </div>
+            <div class="header-title">
+                <h1>Selamat Datang di D.NAKA BALI TOUR & TRAVEL</h1>
+                <p>Jelajahi Bali dan Indonesia dengan kenyamanan, kemewahan, dan pelayanan profesional.</p>
+            </div>
+        </div>
+    </header>
+    <div class="main-content" id="home">
+        <h2>Kenapa Memilih Kami?</h2>
+        <p>Kami menawarkan pengalaman tour terbaik dengan fasilitas premium, pembayaran invoice online, dan tim profesional yang siap membantu perjalanan Anda.</p>
+    </div>
+    <section class="tour-list" id="tours">
+        <div class="tour-item">
+            <div class="carousel-container">
+                <img id="bali-slide" src="images/bali1.jpg" alt="Bali Luxury Trip" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+                <button class="carousel-btn" onclick="prevBaliSlide()">&#8592;</button>
+                <button class="carousel-btn" onclick="nextBaliSlide()">&#8594;</button>
+            </div>
+            <h2>Bali Luxury Trip</h2>
+            <p>3 Hari 2 Malam | Hotel Bintang 5 | Private Guide</p>
+            <p><strong>Rp 7.500.000</strong></p>
+            <p style="text-align:left; color:#4e342e; font-size:1rem; margin-top:16px;">
+                Nikmati pengalaman liburan mewah di Bali bersama D.NAKA Bali Tour & Travel.<br>
+                <b>Fasilitas:</b>
+                <ul style="text-align:left; color:#4e342e; margin:8px 0 8px 18px; font-size:0.97rem;">
+                    <li>Menginap di hotel bintang 5 selama 3 hari 2 malam</li>
+                    <li>Private guide berpengalaman</li>
+                    <li>Transportasi VIP selama tour</li>
+                    <li>Welcome drink & makan pagi setiap hari</li>
+                    <li>Tiket masuk objek wisata premium (Uluwatu, Tanah Lot, Ubud, dll)</li>
+                    <li>Dokumentasi foto profesional</li>
+                    <li>Free souvenir khas Bali</li>
+                </ul>
+                <b>Keunggulan:</b>
+                <ul style="text-align:left; color:#4e342e; margin:8px 0 8px 18px; font-size:0.97rem;">
+                    <li>Jadwal fleksibel sesuai keinginan Anda</li>
+                    <li>Proses booking dan pembayaran invoice online yang mudah</li>
+                    <li>Tim support 24 jam selama perjalanan</li>
+                </ul>
+                <b>Harga:</b> Rp 7.500.000 per orang (minimal 2 peserta)
+            </p>
+            <button class="booking-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking Sekarang</button>
+        </div>
+    
+        <div class="tour-item">
+            <div class="carousel-container">
+                <img id="bali5-slide" src="images/bali5-1.jpg" alt="Explore Bali 5 Hari 4 Malam" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+                <button class="carousel-btn" onclick="prevBali5Slide()">&#8592;</button>
+                <button class="carousel-btn" onclick="nextBali5Slide()">&#8594;</button>
+            </div>
+            <h2>Explore Bali 5 Hari 4 Malam</h2>
+            <p>5 Hari 4 Malam | Wisata Alam & Budaya | Transportasi Nyaman</p>
+            <p><strong>Rp 9.500.000</strong></p>
+            <p style="text-align:left; color:#4e342e; font-size:1rem; margin-top:16px;">
+                Rasakan petualangan seru menjelajahi Bali selama 5 hari 4 malam.<br>
+                <b>Fasilitas:</b>
+                <ul style="text-align:left; color:#4e342e; margin:8px 0 8px 18px; font-size:0.97rem;">
+                    <li>Menginap di hotel nyaman</li>
+                    <li>Transportasi AC selama tour</li>
+                    <li>Guide lokal ramah</li>
+                    <li>Wisata alam (pantai, gunung, air terjun)</li>
+                    <li>Wisata budaya (desa adat, tari Bali)</li>
+                    <li>Makan pagi & makan siang</li>
+                    <li>Tiket masuk objek wisata</li>
+                </ul>
+                <b>Keunggulan:</b>
+                <ul style="text-align:left; color:#4e342e; margin:8px 0 8px 18px; font-size:0.97rem;">
+                    <li>Jadwal fleksibel sesuai keinginan Anda</li>
+                    <li>Booking dan pembayaran invoice online</li>
+                    <li>Tim support 24 jam</li>
+                </ul>
+                <b>Harga:</b> Rp 9.500.000 per orang (minimal 2 peserta)
+            </p>
+            <button class="booking-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking Sekarang</button>
+        </div>
+        <div class="tour-item">
+            <div class="carousel-container">
+                <img id="bali7-slide" src="images/bali7-1.jpg" alt="Explore Bali 7 Hari 6 Malam" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+                <button class="carousel-btn" onclick="prevBali7Slide()">&#8592;</button>
+                <button class="carousel-btn" onclick="nextBali7Slide()">&#8594;</button>
+            </div>
+            <h2>Explore Bali 7 Hari 6 Malam</h2>
+            <p>7 Hari 6 Malam | Wisata Lengkap Bali | Transportasi & Akomodasi Premium</p>
+            <p><strong>Rp 12.500.000</strong></p>
+            <p style="text-align:left; color:#4e342e; font-size:1rem; margin-top:16px;">
+                Jelajahi seluruh keindahan Bali selama 7 hari 6 malam bersama D.NAKA Bali Tour & Travel.<br>
+                <b>Fasilitas:</b>
+                <ul style="text-align:left; color:#4e342e; margin:8px 0 8px 18px; font-size:0.97rem;">
+                    <li>Menginap di hotel dan villa premium</li>
+                    <li>Transportasi AC & VIP selama tour</li>
+                    <li>Private guide profesional</li>
+                    <li>Wisata alam (pantai, gunung, air terjun, sawah)</li>
+                    <li>Wisata budaya & kuliner khas Bali</li>
+                    <li>Makan pagi, siang, dan malam</li>
+                    <li>Tiket masuk semua objek wisata</li>
+                    <li>Dokumentasi foto & video</li>
+                    <li>Free souvenir eksklusif Bali</li>
+                </ul>
+                <b>Keunggulan:</b>
+                <ul style="text-align:left; color:#4e342e; margin:8px 0 8px 18px; font-size:0.97rem;">
+                    <li>Jadwal fleksibel sesuai permintaan</li>
+                    <li>Booking & pembayaran invoice online</li>
+                    <li>Tim support 24 jam</li>
+                </ul>
+                <b>Harga:</b> Rp 12.500.000 per orang (minimal 2 peserta)
+            </p>
+            <button class="booking-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking Sekarang</button>
+        </div>
+    </section>
+    <section class="booking-form" id="booking">
+        <h2 style="color:#4e342e;margin-bottom:24px;font-weight:bold;">Form Booking Tour</h2>
+        <form style="max-width:400px;margin:auto;">
+            <div style="margin-bottom:18px;">
+                <label for="name" style="display:block;color:#6d4c41;font-weight:500;margin-bottom:6px;">Nama Lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Nama Lengkap" required 
+                    style="width:100%;padding:10px 14px;border:1px solid #d7ccc8;border-radius:8px;font-size:1rem;">
+            </div>
+            <div style="margin-bottom:18px;">
+                <label for="email" style="display:block;color:#6d4c41;font-weight:500;margin-bottom:6px;">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required 
+                    style="width:100%;padding:10px 14px;border:1px solid #d7ccc8;border-radius:8px;font-size:1rem;">
+            </div>
+            <div style="margin-bottom:18px;">
+                <label for="phone" style="display:block;color:#6d4c41;font-weight:500;margin-bottom:6px;">Nomor WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nomor WhatsApp" required 
+                    style="width:100%;padding:10px 14px;border:1px solid #d7ccc8;border-radius:8px;font-size:1rem;">
+            </div>
+            <div style="margin-bottom:18px;">
+                <label for="package" style="display:block;color:#6d4c41;font-weight:500;margin-bottom:6px;">Pilih Paket Tour</label>
+                <select id="package" name="package" required 
+                    style="width:100%;padding:10px 14px;border:1px solid #d7ccc8;border-radius:8px;font-size:1rem;">
+                    <option value="">-- Pilih Paket --</option>
+                    <option value="luxury">Bali Luxury Trip (3 Hari 2 Malam)</option>
+                    <option value="explore5">Explore Bali 5 Hari 4 Malam</option>
+                    <option value="explore7">Explore Bali 7 Hari 6 Malam</option>
+                </select>
+            </div>
+            <div style="margin-bottom:18px;">
+                <label for="participants" style="display:block;color:#6d4c41;font-weight:500;margin-bottom:6px;">Jumlah Peserta</label>
+                <input type="number" id="participants" name="participants" min="1" max="20" placeholder="Jumlah Peserta" required 
+                    style="width:100%;padding:10px 14px;border:1px solid #d7ccc8;border-radius:8px;font-size:1rem;">
+            </div>
+            <div style="margin-bottom:24px;">
+                <label for="notes" style="display:block;color:#6d4c41;font-weight:500;margin-bottom:6px;">Catatan Tambahan</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Catatan (opsional)" 
+                    style="width:100%;padding:10px 14px;border:1px solid #d7ccc8;border-radius:8px;font-size:1rem;"></textarea>
+            </div>
+            <button type="submit" class="booking-btn" style="width:100%;font-size:1.1rem;">Kirim Booking</button>
+        </form>
+        <p style="text-align:center;color:#6d4c41;margin-top:18px;font-size:0.97rem;">
+            Setelah booking, tim kami akan menghubungi Anda melalui WhatsApp untuk konfirmasi dan pembayaran invoice.
+        </p>
+    </section>
+    <section class="invoice" id="invoice">
+        <h2 style="color:#4e342e;text-align:center;font-weight:bold;margin-bottom:24px;">Invoice Pembayaran</h2>
+        <div style="background:#fffbe9;border-radius:16px;box-shadow:0 4px 24px rgba(78,52,46,0.10);max-width:420px;margin:24px auto;padding:32px 28px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+                <span style="color:#6d4c41;font-weight:500;">No. Invoice</span>
+                <span style="font-weight:bold;color:#4e342e;">INV-20250914-001</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:18px;">
+                <span style="color:#6d4c41;">Tanggal</span>
+                <span>14 September 2025</span>
+            </div>
+            <hr style="border:none;border-top:1px solid #e0cfc2;margin:18px 0;">
+            <div style="margin-bottom:14px;">
+                <span style="color:#6d4c41;">Nama:</span>
+                <span style="float:right;font-weight:bold;color:#4e342e;">Andi Pratama</span>
+            </div>
+            <div style="margin-bottom:14px;">
+                <span style="color:#6d4c41;">Paket Tour:</span>
+                <span style="float:right;">Bali Luxury Trip</span>
+            </div>
+            <div style="margin-bottom:14px;">
+                <span style="color:#6d4c41;">Durasi:</span>
+                <span style="float:right;">3 Hari 2 Malam</span>
+            </div>
+            <div style="margin-bottom:14px;">
+                <span style="color:#6d4c41;">Jumlah Peserta:</span>
+                <span style="float:right;">2 Orang</span>
+            </div>
+            <hr style="border:none;border-top:1px solid #e0cfc2;margin:18px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:1.15rem;margin-bottom:10px;">
+                <span style="color:#4e342e;font-weight:bold;">Total</span>
+                <span style="color:#4e342e;font-weight:bold;">Rp 11.000.000</span>
+            </div>
+            <div style="margin-top:22px;text-align:right;">
+                <span style="background:#65513f;color:#e5dbdb;padding:8px 22px;border-radius:10px;font-weight:bold;letter-spacing:1px;box-shadow:0 2px 8px rgba(78,52,46,0.08);">LUNAS</span>
+            </div>
+        </div>
+        <p style="text-align:center;color:#6d4c41;margin-top:22px;font-size:1rem;">
+            Terima kasih telah memilih <b>D.NAKA Bali Tour & Travel</b>.<br>
+            Semoga perjalanan Anda menyenangkan!
+        </p>
+    </section>
+    <section class="review-section" id="review">
+        <h2>ALL REVIEW CUSTOMER</h2>
+        <div class="review-card">
+            <p> A Truly Professional and Memorable Bali Experience!
+
+My recent trip to Bali was an incredible experience, and I owe a huge part of that to the exceptional professionalism of the team. From the very beginning, the communication was clear and efficient, making the booking process smooth and stress-free.
+
+During the trip, our guide was not only incredibly knowledgeable about Balinese culture and history but also punctual, organized, and genuinely attentive to our needs. The itinerary was perfectly planned, allowing us to see all the highlights without feeling rushed. Every detail, from transportation to the quality of the activities, was handled with the utmost care and precision.
+
+I highly recommend this company for anyone looking for a professional, reliable, and truly enjoyable trip to Bali. Their commitment to excellence is what made this a five-star experience for me.!"</p>
+            <span>- Andi, Jakarta</span>
+        </div>
+        <div class="review-card">
+            <p>"Flawless and Professional Bali Tour
+
+Our recent tour in Bali was nothing short of spectacular, and the professionalism of the team was the cornerstone of this amazing trip. From our first inquiry to the final drop-off, every aspect was handled with exceptional attention to detail.
+
+Our guide was a true professional—courteous, knowledgeable, and always one step ahead. They ensured our schedule was efficient and personalized, making us feel completely at ease and well-cared for. The transportation was always on time and immaculate, and the activities were perfectly organized, leaving us with nothing to worry about but enjoying the stunning beauty of Bali.
+
+If you're looking for a tour company that prioritizes quality and professionalism, I highly recommend them. They truly set the standard for a world-class travel experience."</p>
+            <span>-Paul weber , germany</span>
+        </div>
+        <div class="review-card">
+            <p>"pengalaman 7 Hari di Bali: Melebihi Ekspektasi!
+
+Perjalanan 7 hari saya di Bali adalah pengalaman yang benar-benar tak terlupakan, dan semua itu berkat profesionalisme luar biasa dari tim yang mengurusnya. Sejak hari pertama, semuanya terorganisir dengan sempurna. Jadwal perjalanan dirancang dengan sangat baik, memberikan kami kesempatan untuk menjelajahi berbagai tempat menarik tanpa merasa terburu-buru.
+
+Setiap detail, mulai dari transportasi yang nyaman dan selalu tepat waktu, hingga pilihan akomodasi yang fantastis, menunjukkan komitmen mereka pada kualitas. Pemandu wisata kami layak mendapat pujian khusus—mereka tidak hanya berpengetahuan luas tentang setiap lokasi yang kami kunjungi, tetapi juga sangat ramah dan sabar, selalu siap menjawab pertanyaan kami. Mereka berhasil menciptakan suasana yang santai dan menyenangkan sepanjang minggu.
+
+Secara keseluruhan, saya sangat puas dengan perjalanan ini. Layanan pelanggan yang responsif dan perhatian terhadap setiap kebutuhan kami membuat kami merasa sangat dihargai. Saya sangat merekomendasikan layanan ini kepada siapa pun yang mencari pengalaman liburan yang profesional, terorganisir, dan benar-benar bebas dari stres."</p>
+            <span>- stefani, Surabaya</span>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 D.NAKA Bali Tour & Travel. All rights reserved.
+    </footer>
+</body>
+</html>
